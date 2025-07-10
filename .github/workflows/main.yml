@@ -1,0 +1,21 @@
+name: 🛠️ Test EventAPK Action
+
+on:
+  push:
+    branches:
+      - main  # or your main branch
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🧩 Run EventAPK custom action
+        uses: eventapk/action@main  # or change to a specific tag/sha
+        with:
+          # Example inputs—adjust based on action's README
+          input1: "hello"
+          input2: "world"
